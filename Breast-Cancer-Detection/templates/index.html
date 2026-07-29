@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Breast Cancer Prediction</title>
+  </head>
+  <body>
+    
+
+    <div class="container mt-4">
+
+    <h1 class="text-center mb-4">Breast Cancer Prediction Model</h1>
+
+    <div class="row">
+
+        <div class="col-md-3">
+            <img src="{{ url_for('static', filename='images/b-1.png') }}"
+                 class="img-fluid rounded shadow"
+                 alt="Image 1"
+                 style="width:200px; height:220px">
+        </div>
+
+        <div class="col-md-3">
+            <img src="{{ url_for('static', filename='images/b-2.png') }}"
+                 class="img-fluid rounded shadow"
+                 alt="Image 2"
+                 style="width:200px; height:220px">
+        </div>
+
+        <div class="col-md-3">
+            <img src="{{ url_for('static', filename='images/b-3.png') }}"
+                 class="img-fluid rounded shadow"
+                 alt="Image 3"
+                 style="width:200px; height:220px">
+        </div>
+
+        <div class="col-md-3">
+            <img src="{{ url_for('static', filename='images/b-4.png') }}"
+                 class="img-fluid rounded shadow"
+                 alt="Image 4"
+                 style="width:200px; height:220px">
+        </div>
+
+    </div>
+
+    <br>
+
+    <form action="/predict" method="POST">
+
+        <label class="form-label">
+            Input all medical breast cancer features
+        </label>
+
+        <input type="text"
+               class="form-control"
+               name="feature"
+               placeholder="Enter comma-separated features">
+
+        <br>
+
+        <button type="submit" class="btn btn-primary">
+            Submit
+        </button>
+    </form>
+  {% if message == "cancrous" %}
+
+<div class="card" style="width: 18rem;">
+    <img src="{{ url_for('static', filename='images/b-1.png') }}"
+                      class="card-img-top"
+                        alt="Cancerous"
+                          style="width: 18rem; height:18rem;">
+    <div class="card-body">
+        <h5 class="card-title text-danger">Cancerous</h5>
+        <p class="card-text">
+            The model predicts that the tumor is cancerous.
+        </p>
+    </div>
+</div>
+
+{% else %}
+
+<div class="card" style="width: 18rem;">
+    <img src="{{ url_for('static', filename='images/b-5.png') }}" 
+            class="card-img-top"
+                alt="Not Cancerous"
+                  style="width: 18rem; height:18rem;">
+    <div class="card-body">
+        <h5 class="card-title text-success">Not Cancerous</h5>
+        <p class="card-text">
+            The model predicts that the tumor is not cancerous.
+        </p>
+    </div>
+</div>
+
+{% endif %}
+
+</div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

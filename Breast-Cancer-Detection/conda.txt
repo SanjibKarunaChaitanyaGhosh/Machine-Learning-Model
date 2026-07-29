@@ -1,0 +1,37 @@
+========>> Create the environment: Specify your environment name and the Python version you want.
+
+conda create --name myenv python=3.11
+
+
+========>>Activate it: Switch into your new workspace.
+
+conda activate myenv
+
+=========>>Install packages: Use Conda or standard pip safely inside the active session.
+
+conda install numpy
+# OR
+pip install requests
+
+=========>> Deactivate it: Exit the workspace to return to your base system.
+
+conda deactivate
+
+
+🧪 Verifying the InstallationTo ensure that the package is successfully installed and accessible by your Python interpreter, run this short command in your terminal:
+
+python -c "import requests; 
+print(requests.__version__)"
+
+
+
+
+Install the requests package:bash
+
+conda install requests
+
+conda install -c conda-forge requests
+
+import requests
+print(requests.__version__)
+
