@@ -1,4 +1,4 @@
-# DEEP_Learning
+# machine-Learning
 conda activate myenv
 conda install flask
 conda install pandas
