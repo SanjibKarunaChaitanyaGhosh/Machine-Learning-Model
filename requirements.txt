@@ -1,5 +1,11 @@
+# Flask==3.0.3
+# pandas==2.2.3
+# numpy==1.26.4
+# tensorflow==2.17.0
+# scikit-learn
+
 Flask==3.0.3
-pandas==2.2.3
 numpy==1.26.4
-tensorflow==2.17.0
-scikit-learn
+pandas==2.2.3
+scikit-learn==1.5.1
+gunicorn==22.0.0
